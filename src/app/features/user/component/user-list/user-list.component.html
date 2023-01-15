@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Username</th>
+    <th scope="col">Email</th>
+    <th scope="col">Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of userLists">
+    <th scope="row">{{user.id}}</th>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>
+      <a routerLink="{{user.id}}">Düzenle</a>
+      <button (click)="deleteUser(user.id)">Sil</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

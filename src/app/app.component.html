@@ -1,0 +1,30 @@
+<div class="d-flex flex-column h-100">
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="/" class="nav-link px-2 text-secondary">Anasayfa</a></li>
+        </ul>
+
+        <div class="text-end" *ngIf="userService.isLoggedIn()">
+          <a routerLink="/user" class="btn btn-outline-light me-2">Kullanıcılar</a>
+          <a routerLink="/user/create" class="btn btn-warning">Kullanıcı Ekle</a>
+          <button (click)="logOut()"  class="btn btn-info">Çıkış Yap</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="flex-shrink-0">
+    <div class="container">
+      <div class="row m-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Footer</span>
+    </div>
+  </footer>
+</div>
